@@ -1,0 +1,30 @@
+Stun2MsgType ::= enumerated
+{
+   STUN_REQUEST,
+   STUN_RESPONSE
+}
+
+Stun2Req() ::=
+{
+   SequenceNumber  8;
+}
+
+Stun2Rsp() ::=
+{
+   SequenceNumber  8;
+}
+
+Stun2Packet() ::=
+{
+   // Header Fields
+   Type        8  enumerated Stun2MsgType;
+   SrcAddress  32; <display>ipv4</display>
+   DstAddress  32; <display>ipv4</display>
+
+   // Message Specific Fields
+   Payload : case Type of
+   {
+      STUN_REQUEST  => echoReq : Stun2Req;
+      STUN_RESPONSE => echoRsp : Stun2Rsp;
+   }
+}
