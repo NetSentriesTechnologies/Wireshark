@@ -3,6 +3,19 @@ Note
 
 This repository is a clone of original wireshark repository located at https://github.com/wireshark/wireshark. This repository includes minor changes in the source code, which is not intended for the original use case of the software in any way. The changes involved only comes in handy on special cases where the particular use cases are employed. Again, this repository is an experimental venture, it's not recommended for ordinary as well as advanced usage, over the original wireshark repo (https://github.com/wireshark/wireshark).
 
+This copy of wireshark includes a custom dissector for STUN protocol, for dissection of STUN protocol based packets. The code for dissector can be found in the directory 'plugins/epan/stun2'. The custom dissector is an alternative, but similar implementation of https://github.com/boundary/wireshark/blob/master/epan/dissectors/packet-stun.c .
+
+ More info on the dissector and it's implementation and how it's developed, implemented can be found at http://www.protomatics.com/wireshark_dissector.html. For reference please visit the following links:
+
+  - https://wiki.wireshark.org/STUN
+  - http://www.protomatics.com/wireshark_dissector.html
+  - https://github.com/boundary/wireshark/blob/master/epan/dissectors/packet-stun.c
+
+For more references,
+
+  - https://unit42.paloaltonetworks.com/malware-trending-stun-awareness/
+  - https://www.youtube.com/watch?time_continue=1&v=lDZSZZ2fdQw&feature=emb_title
+
 
 General Information
 -------------------
